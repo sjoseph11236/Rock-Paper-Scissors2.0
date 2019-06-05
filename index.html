@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Rock, Paper, Scissors</title>
+    <link rel = "stylesheet" type = "text/css" href = "style.css">
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body class = "wrapper">
+    <header> 
+        <h1>Rock Paper Scissors</h1>
+    </header>
+
+    <iframe id = "introMusic" src = "comeOnDown.mp3" allow = "autoplay" class = "music"></iframe>
+<!-- This div is for the score board -->
+   
+    <div class = "score-board">
+        <div class = "badge" id = "user-label">User</div>
+        <div class = "badge" id = "comp-label">Comp</div>
+        <span id = "user-score">0</span>:<span id = "computer-score">0</span>
+    </div>
+
+<!-- This div is for the result text -->
+
+    <div class = "result">
+        <p></p>
+    </div>
+
+<!-- This is for the action message -->
+    <p id = "action-message">Make your move!</p>
+
+<!-- This is computer's Choice Box -->
+    <div class = "compChoiceBox" > 
+        <img id = "compChoiceBoxImg" src = "">
+    </div>
+
+    <h2 id = "compChoice">Computer's Choice</h2>
+
+    <div class = "choices">
+<!-- This stores all the image of rock -->
+        <div class = "choice" id = "rock">
+            <img src = "rock-2.png" alt = "Rock" width = 70% height = 70%>
+        </div>
+
+<!-- This stores  all the image of paper -->
+        <div class = "choice" id = "paper">
+            <img src = "paper-2.png" alt = "paper" width = 70% height = 70%>
+        </div>
+
+<!-- This stores  all the image of Scissors -->
+        <div class = "choice" id = "scissors">
+            <img src = "scissors-2.png" alt = "scissors" width = 70% height = 70%>
+        </div>
+<!-- This is music for points won -->
+        <iframe src = "" allow = "autoplay" id = "musicPlus"></iframe>
+    </div>
+
+<!-- This is the intro screen -->
+    <div id = "overlayIntro">
+        <div id = "introScreenContent">
+            <h1 id = "startGame" onclick = "startGame()">Let's Play!</h1>
+        </div>
+    </div>
+
+<!-- This is the end screen -->
+    <div id = "overlay" >
+        <div id = "endScreenContent">
+            <h1 id = "textEndTitle" onclick = "replay()">Play Again!</h1>
+            <h2 id = "textEndMessage"></h2>
+            <iframe src = "" allow = "autoplay" class = "music" id = "musicEnd"></iframe>
+        </div>
+    </div>
+
+    <script src = "rps2.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+</body>
+</html>

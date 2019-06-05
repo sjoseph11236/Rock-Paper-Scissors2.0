@@ -1,0 +1,256 @@
+/* This re-sets with universal selector "*" and gets rid the default margin and padding */
+*{
+    margin: 0; 
+    padding: 0; 
+    box-sizing:border-box;
+}
+
+body{
+    background-color: #db9833;
+}
+
+header{ 
+    background: white; 
+    padding: 15px;
+}
+
+.music{ 
+    display: none;
+}
+
+#musicPlus{ 
+    display: none; 
+}
+
+header > h1{
+    color: darkgoldenrod;
+    text-align: center;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.score-board{
+    border: 3px solid white;
+    width: 200px;
+    margin: 20px auto; 
+    color: white;
+    font-size: 25px;
+    border-radius: 4px;
+    text-align: center;
+    padding: 15px 20px;
+    font-family: 'Press Start 2P', cursive;
+    position: relative;
+}
+
+.badge{ 
+    background: darkgreen;
+    color: white; 
+    font-size: 10px;
+    padding: 2px 14px; 
+    font-family: 'Press Start 2P', cursive;
+}
+
+#user-label{ 
+    position: absolute;
+    top: 25px;
+    left: -25px;
+}
+
+#comp-label{
+    position: absolute;
+    top: 25px;
+    right:-25px;
+}
+
+.result{
+    font-size: 20px;
+    color: white;
+}
+
+.result > p{
+    text-align: center;
+    font-family: 'Press Start 2P', cursive;
+}
+
+/* Come back here */
+.compChoiceBox{
+    border: 3px solid white;
+    width: 111px;
+    height: 100px;
+    margin: 20px auto; 
+    color: white;
+    border-radius: 4px;
+    padding: 15px 20px;
+}
+
+#compChoiceBoxImg{
+    display: inline-flex;
+}
+
+#compChoice{ 
+    color: white;
+
+}
+.choices{
+    text-align: center; 
+    margin: 60px 0; 
+}
+
+.choice{
+    display: inline-block;
+    border: 4px solid white;
+    border-radius: 50%;   
+    margin: 0 20px;
+    padding: 15px; 
+    transition: all 0.3s ease;
+    box-shadow: 0 9px #999;
+}
+
+.choice:hover{
+    cursor: pointer;
+    background: darkolivegreen;
+    background-color: #3e8e41;
+}
+
+.choice:active{
+    background-color:#3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+#action-message{
+    text-align: center; 
+    color:white;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.green-glow{ 
+    border: 4px solid #4dcc70;
+    box-shadow:0 0 10px #31b43a;
+}
+
+.red-glow{
+    border: 4px solid #fc121b;
+    box-shadow: 0 0 10px #d01115;
+}
+
+.gray-glow{
+    border: 4px solid #464647;
+    box-shadow: 0 0 10px #25292b;
+}
+
+/* intro and End screen */
+
+#overlay{
+    position: fixed;
+    display: none; 
+    width: 100%; 
+    height: 100%;
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    bottom: 0; 
+    background-color: rgba(0,0,0,0.5);
+    z-index: 2;
+    cursor: pointer;
+}
+
+#endScreenContent{ 
+    position: absolute;
+    top: 50%; 
+    left: 50%;
+    font-size: 25px; 
+    color: whitesmoke;
+    text-shadow: 3px 2px crimson;
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+}
+
+#endScreenContent > h1,h2{
+    font-family: "Press Start 2P",cursive;
+    text-align: center;
+}
+
+#endScreenContent > h2{
+    margin-top: 20px; 
+}
+
+#textEndTitle:hover{
+    cursor: pointer;
+    padding: 5px 5px; 
+    background: darkolivegreen;
+    background-color: green; 
+}
+
+#textEndTitle:active{
+    background-color: green; 
+    box-shadow:0 5px #666;
+    transform: translateY(4px);
+}
+
+#overlayIntro{
+    position: fixed;
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    bottom: 0; 
+    background-color: rgba(0,0,0,0.5);
+    z-index: 2; 
+    cursor: pointer; 
+}
+
+#introScreenContent{ 
+    position: absolute;
+    top: 50%; 
+    left: 50%; 
+    font-size: 25px; 
+    color: whitesmoke; 
+    text-shadow: 3px 2px crimson;
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+}
+
+#introScreenContent  > h1{ 
+    font-family: "Press Start 2P", cursive;
+    text-align: center; 
+}
+
+#startGame:hover{
+    cursor: pointer;
+    padding: 15px 45px; 
+    background: darkolivegreen;
+    background-color: seagreen
+}
+
+#startGame:active{ 
+    background-color: seagreen;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+/* Confetti */
+
+.wrapper{
+    position: relative;
+    min-height: 100vh;
+}
+
+[clsss |= "confetti"]{
+    position: absolute;
+}
+
+.red{
+    background-color: #dc2626;
+}
+
+.yellow{
+    background-color: #ffbf00;
+}
+
+.blue{
+    background-color: #6eaff3;
+}
