@@ -15,8 +15,8 @@ New Rules:
 - First to 2 points wins the match.
 
 
-Link to game: https://sjoseph11236.github.io/Rock-Paper-Scissors/
+Link to [Game](https://sjoseph11236.github.io/Rock-Paper-Scissors/)
 
-Let's connect on LinkedIn: https://www.linkedin.com/in/sayeed-joseph-3b95b9179/
+Let's connect on [LinkedIn](https://www.linkedin.com/in/sayeed-joseph-3b95b9179/)
 
-Source: Tutorial: https://www.youtube.com/watch?v=jaVNP3nIAv0
+Source: [Tutorial](https://www.youtube.com/watch?v=jaVNP3nIAv0)
