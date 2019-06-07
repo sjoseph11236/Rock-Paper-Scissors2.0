@@ -40,13 +40,14 @@ function playAudioNeg() {
 
 // create confetti particles
 function create(i) {
+    debugger;
     // Create confetti particles:
 
     // Generates random number, then multiples by 15
     let width = Math.random() * 15; 
     console.log('width ===>',width);
     // Takes generated width, multplues by .4 for height
-    let height =width * 0.4;
+    let height = width * 0.4;
     console.log('height ===>',height);
     // generates a random number to decide whether the confetti is blue, yellow, or red
     let colorIdx = Math.ceil(Math.random() * 3);
@@ -60,20 +61,19 @@ function create(i) {
         case 2:
             color = "blue";
             break;
-        case 3:
+        default:
             color = "red";
-            break; 
     }
 
     // Create DOM object for particle
     // and add particle to wrapper
-    $('<div class = "confetti-' + i + '' + color +'"></div>').css({
+    $('<div class = "confetti-' + i + ' ' + color +'"></div>').css({
         "width" : width + "px",
         "height" : height + "px",
         "top": -Math.random() * 20 + "%",
         'left': Math.random() * 100 + "%",
         "opacity": Math.random() + 0.5,
-        'transform': "rotate("+Math.random() * 360 *" deg)"
+        'transform': "rotate("+Math.random() * 360 +" deg)"
     }).appendTo('.wrapper');
     
     // Make confetti drop
@@ -84,7 +84,6 @@ function drop(x) {
     $('.confetti-'+ x).animate({
         top: "100%",
         left: "+=" + Math.random() * 15 + "%"
-
     }, Math.random() * 2000 + 2000, function() {
         reset(x);
     });
@@ -107,18 +106,21 @@ function computerChoiceBox(computerChoice) {
     if(computerChoice == "rock"){
         console.log(computerChoice)
         computerChoice_img.src = "rock-2.png";
+        computerChoice_img.alt = "rock";
         computerChoice_img.style.width = '90%';
         computerChoice_img.style.height = '90%';
     }
      else if(computerChoice == "scissors"){
         console.log(computerChoice)
         computerChoice_img.src = "scissors-2.png";
+        computerChoice_img.alt = "scissors";
         computerChoice_img.style.width = '90%';
         computerChoice_img.style.height = '90%';
     }
     else if(computerChoice == "paper"){
         console.log(computerChoice)
         computerChoice_img.src = "paper-2.png";
+        computerChoice_img.alt = "paper";
         computerChoice_img.style.width = '90%';
         computerChoice_img.style.height = '90%';
     }
@@ -156,9 +158,12 @@ function maxWins(userScore, computerScore) {
     if(userScore == maxWinsNum){
     // inside reslut_p .innerHTML = "GAME OVER! YOU WIN!"
         // console.log("GAME OVER! YOU WIN!")
-        GameOverDisplay();
+        gameOverDisplay();
         playAudioWin();
         result_GameOver.innerHTML = 'YOU WIN!';
+        // for(let i = 0; i < 30; i++) {
+        //     create(i);
+        // }
         for(let i = 0; i < 30; i++) {
             create(i);
         }
@@ -171,7 +176,7 @@ function maxWins(userScore, computerScore) {
     //  else if statment that checks if computerScore = maxWins; 
     // inside result_p.innerHTML = "GAMEOVER! YOU LOST!"
         // console.log("GAMEOVER! YOU LOST!")
-        GameOverDisplay();
+        gameOverDisplay();
         playAudioLose();
         result_GameOver.innerHTML = 'YOU LOSE!';
     }
@@ -182,9 +187,9 @@ function maxWins(userScore, computerScore) {
 
 // functions to for overlay display to start and game over
 
-function GameOverDisplay(){
+function gameOverDisplay(){
     // console.log("visible")
-    document.getElementById('overlay').style.display= "block";
+    document.getElementById('overlay').style.display= "block";        
 };
 
 
@@ -203,6 +208,7 @@ function replay(){
     computerScore_span.innerHTML = computerScore;
     result_p.innerHTML = '';
     computerChoice_img.src = '';
+    computerChoice_img.alt = '';
     computerChoice_img.style.width = '';
     computerChoice_img.style.height = '';
     x.src = "";
