@@ -1,6 +1,6 @@
 Project:
 
-- A rock, paper, scissors game built using HTML, CSS, and Javascript. I added overlay, button click animation, confetti animation, and sound effects.
+- A rock, paper, scissors game built using HTML, CSS, and Javascript. I added overlay, button click animation, and sound effects.
 
 Rules:
 
