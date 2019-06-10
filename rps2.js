@@ -36,73 +36,8 @@ function playAudioNeg() {
     y.src = "neg.mp3"
 };
 
-// -----
-
-// create confetti particles
-function create(i) {
-    debugger;
-    // Create confetti particles:
-
-    // Generates random number, then multiples by 15
-    let width = Math.random() * 15; 
-    console.log('width ===>',width);
-    // Takes generated width, multplues by .4 for height
-    let height = width * 0.4;
-    console.log('height ===>',height);
-    // generates a random number to decide whether the confetti is blue, yellow, or red
-    let colorIdx = Math.ceil(Math.random() * 3);
-    let color = "red";
-    console.log("colorIdx ==>", colorIdx);
-    // select random color for particle
-    switch(colorIdx){
-        case 1:
-            color = "yellow";
-            break;
-        case 2:
-            color = "blue";
-            break;
-        default:
-            color = "red";
-    }
-
-    // Create DOM object for particle
-    // and add particle to wrapper
-    $('<div class = "confetti-' + i + ' ' + color +'"></div>').css({
-        "width" : width + "px",
-        "height" : height + "px",
-        "top": -Math.random() * 20 + "%",
-        'left': Math.random() * 100 + "%",
-        "opacity": Math.random() + 0.5,
-        'transform': "rotate("+Math.random() * 360 +" deg)"
-    }).appendTo('.wrapper');
-    
-    // Make confetti drop
-    drop(i);
-};
-
-function drop(x) {
-    $('.confetti-'+ x).animate({
-        top: "100%",
-        left: "+=" + Math.random() * 15 + "%"
-    }, Math.random() * 2000 + 2000, function() {
-        reset(x);
-    });
-};
-
-
-function reset(x) {
-    // Reset opacity
-    $('.confetti-' + x).css('opacity','1');
-
-    $('.confetti-' + x).animate({
-        "top" : -Math.random() * 20 + "%",
-        "left" : "-=" + Math.random()* 15 + "%"
-    },0,function() {
-        drop(x);
-    });
-};
-
 function computerChoiceBox(computerChoice) {
+    
     if(computerChoice == "rock"){
         console.log(computerChoice)
         computerChoice_img.src = "rock-2.png";
@@ -130,6 +65,7 @@ function computerChoiceBox(computerChoice) {
 };
 
 function getComputerChoice() {
+    
     let choices = ["rock","paper","scissors"];
     let randomNumber = Math.floor(Math.random()* 3);
     return choices[randomNumber]; 
@@ -137,6 +73,7 @@ function getComputerChoice() {
 
 
 function wins(userChoice,computerChoice) {
+    
     computerChoiceBox(computerChoice)
     userScore++;
     computerScore--;
@@ -161,20 +98,10 @@ function maxWins(userScore, computerScore) {
         gameOverDisplay();
         playAudioWin();
         result_GameOver.innerHTML = 'YOU WIN!';
-        // for(let i = 0; i < 30; i++) {
-        //     create(i);
-        // }
-        for(let i = 0; i < 30; i++) {
-            create(i);
-        }
     }
-    else{ 
-        console.log(userScore)
-    }
-    
-    if(computerScore == maxWinsNum){
-    //  else if statment that checks if computerScore = maxWins; 
-    // inside result_p.innerHTML = "GAMEOVER! YOU LOST!"
+    else if(computerScore == maxWinsNum){
+        //  else if statment that checks if computerScore = maxWins; 
+        // inside result_p.innerHTML = "GAMEOVER! YOU LOST!"
         // console.log("GAMEOVER! YOU LOST!")
         gameOverDisplay();
         playAudioLose();
@@ -189,7 +116,7 @@ function maxWins(userScore, computerScore) {
 
 function gameOverDisplay(){
     // console.log("visible")
-    document.getElementById('overlay').style.display= "block";        
+    document.getElementById('overlay').style.display= "block";   
 };
 
 
@@ -284,3 +211,5 @@ function main() {
 };
 
 main();
+
+
